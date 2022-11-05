@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=argumentos
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\n\ Method\ main.\ Realiza\ una\ ejecuci\u00F3n\ t\u00EDpica\ del\ juego\ \n\ del\ buscaminas.\ Dicha\ ejecuci\u00F3n\ solicitar\u00E1\ al\ usuario\n\ valores\ de\ dimensiones\ del\ tablero\ y\ el\ n\u00FAmero\ de\ minas\n\ para\ iniciar\ el\ juego\ y,\ cuando\ sean\ v\u00E1lidos,\ realizar\u00E1\n\ el\ di\u00E1logo\ necesario\ con\ el\ usuario\ para\ el\ desarrollo\ \n\ del\ juego\ hasta\ su\ finalizaci\u00F3n.\n\ Se\ considerar\u00E1n\ v\u00E1lidos\ los\ valores\ si\ filas\ y\ columnas\n\ son\ positivos\ y\ el\ n\u00FAmero\ de\ minas\ no\ supera\ la\ mitad\n\ de\ las\ casillas\ del\ tablero.\n
+numComments=1

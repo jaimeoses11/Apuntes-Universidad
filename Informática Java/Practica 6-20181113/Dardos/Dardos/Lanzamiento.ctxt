@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Lanzamiento
+comment0.text=\r\n\ Representa\ el\ lanzamiento\ de\ un\ dardo\r\n
+comment1.params=
+comment1.target=Lanzamiento()
+comment1.text=\r\n\ Constructor\ \r\n
+comment2.params=
+comment2.target=int\ Puntuacion()
+comment2.text=\r\n\ Calcula\ la\ puntuacion\ del\ lanzamiento\ a\ partir\ del\ numero\ y\ el\ multiplicador\ \r\n
+comment3.params=
+comment3.target=void\ Muestra()
+comment3.text=\r\n\ Muestra\ al\ usuario\ el\ resultado\ del\ lanzamiento\r\n
+numComments=4

@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Casilla()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Casilla.\ Genera\ una\ \n\ casilla\ del\ tablero\ que\ estar\u00E1\ tapada,\ no\ tendr\u00E1\ mina\n\ y\ no\ estar\u00E1\ marcada.\n
+comment1.params=
+comment1.target=boolean\ estaTapada()
+comment1.text=\n\ Method\ estaTapada.\ Observador\ del\ atributo\ tapada\n\n\ @return\ valor\ booleano\ que\ lo\ indica\n
+comment2.params=
+comment2.target=boolean\ tieneMina()
+comment2.text=\n\ Method\ tieneMina.\ Observador\ del\ atributo\ tieneMina\n\n\ @return\ valor\ booleano\ que\ lo\ indica\n
+comment3.params=
+comment3.target=boolean\ estaMarcada()
+comment3.text=\n\ Method\ estaMarcada.\ Observador\ del\ atributo\ marcada\n\n\ @return\ valor\ booleano\ que\ lo\ indica\n
+comment4.params=
+comment4.target=void\ destapa()
+comment4.text=\n\ Method\ destapa.\ Descubre\ la\ casilla\ objeto\ due\u00F1o\ si\n\ no\ est\u00E1\ marcada.\ En\ caso\ de\ estar\ marcada\ no\ la\ debe\n\ desatapar\n
+comment5.params=
+comment5.target=void\ ponMina()
+comment5.text=\n\ Method\ ponMina.\ A\u00F1ade\ una\ mina\ a\ la\ casilla\ objeto\n\ due\u00F1o\n
+comment6.params=
+comment6.target=void\ cambiaMarca()
+comment6.text=\n\ Method\ cambiaMarca.\ Estando\ tapada,\ cambia\ el\ estado\n\ de\ marca\ de\ la\ casilla\ objeto\ due\u00F1o,\ es\ decir,\ si\ est\u00E1\ \n\ marcada\ la\ desmarca\ y\ lo\ contrario.\ En\ caso\ de\ estar\n\ destapada,\ no\ har\u00E1\ nada\n
+numComments=7

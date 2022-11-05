@@ -1,0 +1,18 @@
+#BlueJ package file
+objectbench.height=100
+objectbench.width=291
+package.editor.height=368
+package.editor.width=498
+package.editor.x=638
+package.editor.y=160
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+project.charset=UTF-8
+target1.height=62
+target1.name=figuras
+target1.type=PackageTarget
+target1.width=80
+target1.x=250
+target1.y=10

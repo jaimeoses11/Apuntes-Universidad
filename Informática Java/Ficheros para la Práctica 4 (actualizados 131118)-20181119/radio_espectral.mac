@@ -1,0 +1,25 @@
+  radio(B):=
+  
+  /* Función para calcular el radio espectral de una matriz  B */
+  /* La variable de entrada: B matriz                          */
+      
+  
+  block([rho,s,m,x,val_propios],
+  
+       m:length(B),
+  
+       s:allroots(determinant(B-x*ident(m))),
+
+       m:length(s),
+
+       s:makelist(rhs(s[i]),i,1,m),
+
+       val_propios:ident(m).s,
+
+       rho:mat_norm(val_propios,inf),
+
+
+       /* Se devuelve los valores propios de B y su radio espectral */
+      
+       [val_propios,rho]
+  );   

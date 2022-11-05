@@ -1,0 +1,171 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: title   start ]
+Práctica 4
+
+Métodos iterativos para
+
+sistemas lineales
+
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: section start ]
+Introducción
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: comment start ]
+Distribución de temperatura de una placa:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: section start ]
+Métodos iterativos clásicos
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: comment start ]
+Cargamos el fichero D_E_F.mac que nos permite expresar
+la matriz A como suma de matrices.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load("C:/.../D_E_F.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+A:matrix([4,-1,-1,0],[-1,4,0,-1],[-1,0,4,-1],[0,-1,-1,4]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+[D,E,F]:D_E_F(A);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: section start ]
+Método de Jacobi
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: subsect start ]
+Jacobi paso a paso
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: comment start ]
+Realizamos cuatro iteraciones del método de Jacobi 
+aplicado al problema de la distribución de
+temperaturas de una placa en estado estacionario.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+b:matrix([0],[8/9],[2/3],[14/9]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Definimos las matrices M y N, para calcular la nueva 
+iteración (k+1) en función de la inmediatamente anterior (k):
+
+x_k+1 = M^(-1).(N.x_k + b)
+
+o de forma más eficiente, resolviendo el sitema (triangular inferior):
+
+M.x_k+1 = N.x_k + b
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+M:D$
+N:E+F$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Definimos como aproximación inicial el vector nulo
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+x0:zeromatrix(4,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Cargamos el fichero triang_inf.mac
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load("C:/.../triang_inf.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Calculamos la cuatro primeras aproximaciones
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+x1:triang_inf(M,N.x0+b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x2:triang_inf(M,N.x1+b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x3:triang_inf(M,N.x2+b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x4:triang_inf(M,N.x3+b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: subsect start ]
+Algoritmo de Jacobi
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: comment start ]
+Cargamos el fichero met_jacobi.mac para hacer los ejercicios
+propuestos.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load("C:/..../met_jacobi.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: section start ]
+Método de Gauss-Seidel
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: section start ]
+Ejercicios propuestos
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 1
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 2
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 3
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 4
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 5
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 6
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 7
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 8
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 9
+   [wxMaxima: subsect end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

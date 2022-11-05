@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Partida
+comment0.text=\r\n\ Partida\ de\ dardos\ entre\ 2\ jugadores\r\n
+comment1.params=x
+comment1.target=Partida(int)
+comment2.params=
+comment2.target=int\ Modo()
+comment3.params=
+comment3.target=void\ escribirMarcador()
+comment4.params=
+comment4.target=void\ start()
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

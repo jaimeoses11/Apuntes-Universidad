@@ -1,0 +1,151 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.08.0 ] */
+
+/* [wxMaxima: title   start ]
+Práctica 3
+
+Sistemas de ecuaciones lineales.
+Eliminación gaussiana.
+Factorización LU.
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: section start ]
+La eliminación de Gauss como programa de Maxima
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: fold    start ] */
+
+/* [wxMaxima: comment start ]
+Recuerda cargar el fichero elim_gauss.mac antes de utilizarlo
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: fold    end   ] */
+
+/* [wxMaxima: section start ]
+Factorización LU
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: fold    start ] */
+
+/* [wxMaxima: comment start ]
+Recuerda cargar el fichero matrices_elementales.mac
+
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+A:matrix([4,-1,0,0],[-1,3,1,0],[0,1,5,-2],[0,0,-2,3]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+A1:pijt(2,1,1/4,4).A;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+A2:pijt(3,2,-4/11,4).A1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+U:pijt(4,3,22/51,4).A2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+L:pijt(2,1,-1/4,4).pijt(3,2,4/11,4).pijt(4,3,-22/51,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(A=L.U);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: fold    end   ] */
+
+/* [wxMaxima: section start ]
+Estrategia de pivote parcial
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: fold    start ] */
+
+/* [wxMaxima: input   start ] */
+Ab:matrix([1,2,1,4,8],[0,-2,3,4,5],[-5,3,1,4,3],[4,1,2,3,10]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+[n,m]:matrix_size(Ab);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+pivote:Ab[1,1];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fila:1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+for i:2 step 1 thru n do(
+    if (abs(Ab[i,1]) > pivote) then ( 
+        pivote:abs(Ab[i,1]),
+        fila:i    
+    ) 
+)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+pivote;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fila;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+if (fila > 1) then (
+       Ab:rowswap(Ab,fila,1)
+    );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: fold    end   ] */
+
+/* [wxMaxima: section start ]
+Ejercicios propuestos
+   [wxMaxima: section end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 1
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 2
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 3
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 4
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 5
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 6
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 7
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 8
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: subsect start ]
+Ejercicio 9
+   [wxMaxima: subsect end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

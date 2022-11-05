@@ -1,0 +1,20 @@
+elim_gauss(A,b):=/* Esta función resuelve el sistema Ax=b utilizando */
+/* eliminación gaussiana, SIN intercambiar filas. */
+/* Argumentos de entrada: */
+/* A, matriz de coeficientes del sistema; */
+/* b, vector de términos independientes. */
+block([m,n,i,j,mult,x], /* Definimos las variables locales a usar.*/
+ [m,n]:matrix_size(A), /* Calculamos el tamaño de la matriz A. */
+ Ab:addcol(A,b),/* Construimos la matriz ampliada. */
+ for j:1 step 1 thru n do( /* Recorremos las columnas. */
+  for i:j+1 step 1 thru m do(
+   /* Bajamos por debajo de la diagonal en la columna i. */
+   mult:-Ab[i,j]/Ab[j,j], /* Calculamos el multiplicador. */
+   Ab[i]:Ab[i]+mult*Ab[j] /* Hacemos 0 el valor de Ab[i,j]. */
+  ) /* Cerramos el for que recorre las filas. */
+ ), /* Cerramos el for que recorre las columnas. */
+U:submatrix(Ab,n+1), /* Extraemos la matriz de coeficientes escalonada. */
+d:col(Ab,n+1), /* Extraemos el vector de términos independientes. */
+x:triang_sup(U,d),/* Resolvemos el sistema triangular superior equivalente.*/
+x /* Argumento de salida: x, vector solución. */
+); /* Cerramos block que define la función. */

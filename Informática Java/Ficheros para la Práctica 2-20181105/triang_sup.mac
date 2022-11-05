@@ -1,0 +1,17 @@
+triang_sup(U,d):=/* Esta función resuelve un sistema triangular superior  */
+                 /* que tenga todos los elementos de la diagonal no nulos.*/
+                 /* Argumentos de entrada:				  */
+                 /*     U, matriz de coeficientes del sistema;		  */
+                 /*     d, vector de términos independientes. 		  */
+
+    block([n,m,i,suma,x], /* Definimos las variables locales que se van a usar. */
+    [n,m]:matrix_size(U), /* Calculamos el tamaño de la matriz U. */
+    x:transpose(makelist(x[i],i,1,m)), /* Dimensionamos el vector solución. */
+    for i:n step -1 thru 1 do(  /* Vamos recorriendo todas las filas hacia ARRIBA. */
+        suma:0,                     /* Las tres líneas siguientes calculan el sumatorio */
+        for j:i+1 step 1 thru m do( /* que tenemos que restar (términos a la DERECHA)   */
+            suma:suma+U[i,j]*x[j]), /* para despejar la incógnita x[i].   		*/
+        x[i]:(d[i]-suma)/U[i,i] /* Despejamos x[i]. */
+        ),	/* Cerramos el for que recorre las filas. */
+    x   /* Argumento de salida: x, vector solución. */ 
+);	/* Cerramos block que define la función. */

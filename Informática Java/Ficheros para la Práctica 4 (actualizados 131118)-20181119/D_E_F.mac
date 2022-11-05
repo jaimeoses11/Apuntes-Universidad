@@ -1,0 +1,43 @@
+D_E_F(A):=
+
+/* Esta función calcula la descomposición D, E, F de forma que A=D-E-F.  */
+                 
+/* Argumento de entrada:                     */
+
+/*     A, matriz de coeficientes del sistema.*/
+
+
+
+block([n,m,i,j,D,E,F], /* Definimos las variables locales a usar. */
+
+
+    [n,m]:matrix_size(A), /* Calculamos el tamaño de la matriz A. */
+
+    D:zeromatrix(n,n), /* Inicializamos D como matriz nula. */
+
+    for i:1 thru n do(
+ 
+        D[i,i]:A[i,i] /* Copiamos los valores de la diagonal. */
+        ),
+
+
+    E:zeromatrix(n,n), /* Inicializamos E como matriz nula. */
+
+    for i:1 thru n do(
+ 
+        for j:1 thru i-1 do(  
+            E[i,j]:-A[i,j] /* Copiamos los valores por debajo de la digonal*/
+            )              /* cambiados de signo.                          */
+        ),
+
+
+    F:D-E-A, /* Calculamos la matriz F. */
+    [D,E,F]   /* Argumentos de salida:                                    */
+
+              /*   D, matriz diagonal;                                    */
+
+              /*   E, matriz triangular inferior con ceros en la diagonal;*/
+
+              /*   F, matriz triangular superior con ceros en la diagonal;*/
+
+);	/* Cerramos block que define la función. */

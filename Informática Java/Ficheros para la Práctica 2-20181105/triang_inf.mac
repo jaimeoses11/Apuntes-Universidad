@@ -1,0 +1,24 @@
+triang_inf(L,b):=/* Esta función resuelve un sistema triangular inferior */
+                 /* que tenga todos los elementos de la diagonal no nulos.*/
+                 /* Argumentos de entrada:				  */
+                 /*     L, matriz de coeficientes del sistema;		  */
+                 /*     b, vector de términos independientes. 		  */
+
+    block([n,m,i,suma,x], /* Definimos las variables locales que se van a usar. */
+    [n,m]:matrix_size(L), /* Calculamos el tamaño de la matriz L. */
+    x:transpose(makelist(x[i],i,1,m)), /* Dimensionamos el vector solución. */
+
+    for i:..... step 1 thru ..... do(  /* Vamos recorriendo todas las filas hacia ABAJO */
+
+        suma:0,                     /* Las tres líneas siguientes calculan el sumatorio */
+
+        for j:..... step 1 thru ..... do( /* que tenemos que restar (términos a la DERECHA)   */
+
+            suma:suma+L[i,j]*x[j]), /* para despejar la incógnita x[i].   		*/
+            
+            x[i]: ......................... /* Despejamos x[i]. */
+
+        ),	/* Cerramos el for que recorre las filas. */
+
+    x   /* Argumento de salida: x, vector solución. */ 
+);	/* Cerramos block que define la función. */

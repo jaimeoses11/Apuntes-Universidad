@@ -1,0 +1,64 @@
+met_jacobi(A,b,x0,max_iter,tol):=
+/* Método iterativo de Jacobi aplicado al sistema Ax=     */
+                 
+/* Argumentos de entrada:                                 */
+
+/*     A, matriz de coeficientes del sistema.             */
+
+
+/*     b, vector de términos independientes del sistema.  */
+
+
+/*     x0, vector inicial.                                */
+
+
+/*     max_iter, número máximo de iteraciones.            */
+
+
+/*     tol, tolerancia.                                   */
+
+
+
+block([n,c,x_new,dif,D,E,F,M,N,m,iter,x_old], /* Definimos las variables locales a usar. */
+
+
+    [n,c]:matrix_size(A), /* Calculamos el tamaño de la matriz A. */
+
+
+    x_new:copymatrix(x0), /* Tomamos el vector inicial. */
+
+    dif:tol+1, /* Inicializamos el error por encima de la tolerancia. */
+
+    [D,E,F]:D_E_F(A), /* Calculamos la descomposición de A. */
+
+    M:D, /* Definimos M. */
+
+    N:E+F, /* Definimos N. */
+
+    for m:1 while (m<=max_iter and dif>tol) do (
+ 
+        
+       /* Empezamos el bucle principal del método*/
+       /* Lo acabaremos cuando hayamos superado el número máximo de iteraciones,*/
+       /* o se haya detectado convergencia. */
+
+       x_old:copymatrix(x_new), /* Actualizamos el valor de la aproximación calculada. */
+       x_new:triang_inf(M,N.x_old+b), /* Calculamos la nueva aproximación. */
+       dif:mat_norm(x_new-x_old,inf), /* Criterio de parada: || x_new - x_old || < tol */
+       iter:m /* Actualizamos el contador de iteraciones. */
+       ),/* Cerramos el bucle principal del método*/    
+
+    if dif>tol then ( /* No conseguimos convergencia. */
+       print("Número máximo de iteraciones superado"),
+       print("El error estimado es ",float(dif))
+       ),
+
+    [float(x_new),iter]   
+       /* Argumentos de salida:                     */
+
+       /*    x_new, solución aproximada             */
+
+       /*    iter, número de iteraciones realizadas */
+
+
+);     /* Cerramos block que define la función. */

@@ -1,0 +1,72 @@
+/*------------------------------------------------------*/
+/* Esta función resuelve el sistema Ax=b utilizando  	*/
+/* eliminación gaussiana, CON intercambio de filas.	*/
+/*                                                      */
+/* Argumentos de entrada:				*/
+/*     A, matriz de coeficientes del sistema;		*/
+/*     b, vector de términos independientes. 		*/
+/*------------------------------------------------------*/
+
+gauss_pivote(A,b):=
+
+block([m,n,i,j,mult,x, pivote, fila],   /* Definimos las variables locales a usar */
+    
+    [m,n]:matrix_size(A),     /* Calculamos el tamaño de la matriz A */
+
+    Ab:addcol(A,b),	      /* Construimos la matriz ampliada */
+
+    for j:1 step 1 thru n do( /* Recorremos las columnas (bajando por la diagonal) */
+
+        
+        /* Selección del pivote */
+        pivote:abs(Ab[j,....]), /* pivote inicial */
+        fila:j,   /*  en principio el pivote está en la fila j  */
+
+        /* Empezamos la comparación con los elementos de la columna j */
+        /* por debajo de la posición (j,j)  */
+
+        for i:j+1 step 1 thru m do (
+            if ( abs(Ab[i,j]) > pivote ) then  ( /* coeficiente de mayor valor absoluto que pivote */
+                fila:i,  /* ahora el pivote está en la fila i */
+                pivote:abs(Ab[i,j]) /* nuevo pivote */
+            ) /* cierro paréntesis condiciones "if" */
+            
+        ), /* cierro paréntesis del for */
+
+      
+        if (pivote=0.) then ( /* elementos Ab(i,j), con i>=j, son todos nulos */
+                print("Matriz no regular"),
+                return(Ab) /* salimos del programa */
+         ), /* cierro paréntesis condiciones "if" */
+
+         if (fila > j) then ( /* intercambiamos las filas con el nuevo pivote y el pivote viejo */
+                Ab:rowswap(Ab, .... , ....)
+         ), /* cierro paréntesis condiciones "if" */
+
+        
+        /* Hacemos ceros por debajo de la diagonal principal */
+
+
+	for i:j+1 step 1 thru m do( /* Recorremos las filas por debajo de la posición (j,j) */
+
+		mult:......... , /* Calculamos el multiplicador */
+
+		Ab[i]:........ /* Hacemos 0 el valor de Ab[i,j] */
+
+	) /* Cerramos el for que recorre las filas */
+
+     ), /* Cerramos el for que recorre las columnas */
+
+    U:.......... , /* Extraemos la matriz de coeficientes escalonada */
+
+    y:.......... , /* Extraemos el vector de términos independientes del sistema escalonado */
+
+    x:.......... , /* Resolvemos el sistema triangular superior equivalente */
+
+    print("La solución obtenida es:"),
+
+    return(.........)   /* Argumento de salida: x, vector solución */ 
+
+)$	/* Cerramos block que define la función "gauss(A,b)" */
+		
+/*-----------------------------------------------------------*/

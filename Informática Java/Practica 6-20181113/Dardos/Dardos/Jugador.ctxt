@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Jugador
+comment0.text=\r\n\ Representa\ a\ un\ jugador\ del\ juego\ de\ dardos.\r\n
+comment1.params=punt
+comment1.target=Jugador(int)
+comment1.text=\r\n\ Constructor\:\ Asigna\ al\ atributo\ del\ jugador\ la\ puntuaci\u00F3n\ objetivo\ de\ la\ partida\r\n
+comment2.params=
+comment2.target=boolean\ ganarPartida()
+comment2.text=\r\n\ Averigua\ si\ el\ jugador\ ha\ alcanzado\ la\ puntuacion\ que\ permite\ ganar\ la\ partida\ \r\n
+comment3.params=
+comment3.target=int\ tirada()
+comment3.text=\r\n\ Calcula\ el\ numero\ de\ puntos\ que\ ha\ obtenido\ el\ jugador\ en\ una\ tirada.\r\n\ En\ una\ tirada\ se\ hacen\ 3\ lanzamientos,\ salvo\ si\ ya\ se\ ha\ ganado\ con\ el\ 1\u00BA\ o\ 2\u00BA\r\n\ lanzamientos.\r\n\ Si\ en\ la\ tirada\ el\ jugador\ obtiene\ un\ numero\ de\ puntos\ mayor\ que\ su\ puntuacion,\ la\r\n\ tirada\ se\ anula\ (obtiene\ 0\ puntos)\r\n
+comment4.params=
+comment4.target=int\ puntuacionActual()
+comment4.text=\r\n\ Actualiza\ la\ puntuacion\ del\ jugador\ tras\ haber\ realizado\ una\ tirada\r\n
+comment5.params=
+comment5.target=java.lang.String\ muestraPunt()
+comment5.text=\r\n\ Muestra\ al\ usuario\ la\ puntuacion\ del\ jugador\r\n
+numComments=6

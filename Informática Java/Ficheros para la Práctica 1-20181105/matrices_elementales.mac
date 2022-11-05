@@ -1,0 +1,34 @@
+
+/* Matrices elementales */
+
+pij(i,j,n):=block([P],
+/* i, j marcan posiciones de elementos que difieren de la identidad */
+/* n representa el tamaño de la matriz */
+P:ident(n),
+P[i,i]:0,
+P[i,j]:1,
+P[j,i]:1,
+P[j,j]:0,
+return(P)
+)$
+
+
+pijt(i,j,t,n):=block([P],
+/* (i, j) posición en la que se encuentra el escalar t */
+/* n representa el tamaño de la matriz P */
+P:ident(n),
+P[i,j]:t,
+return(P)
+)$
+
+
+
+qis(i,s,n):=block([P],
+/* (i,i) elemento diagonal igual al escalar s */
+/* n representa el tamaño de la matriz P */
+P:ident(n),
+P[i,i]:s,
+return(P)
+)$
+
+
